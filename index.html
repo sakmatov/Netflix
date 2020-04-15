@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html>
+  <!--Add settings for UTF-->
+  <head>
+  <title>My Netflix</title>
+  <style>
+  * {
+     box-sizing: border-box;
+     margin: 0;
+    }
+    #header{
+      background: black;
+      color: white;
+      overflow: auto;
+      padding-left: 25px;
+      padding-right: 25px;
+    }
+    #header a{
+      font-family: helvetico;
+      text-decoration: none;
+    }
+    .logo{
+      float: left;
+      display: inline-block;
+      padding: 20px;
+      margin-right: 25px;
+    }
+    .leftMenu{
+      float: left;
+      display: inline-block;
+      }
+     .leftMenu ul{
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      }
+     .leftMenu ul li{
+      display: inline-block;
+      padding: 20px;
+      }
+     .leftMenu ul li a{
+      color: white;
+     }
+    .rightMenu{
+      float: right;
+      display: inline-block;
+      color: black;
+      }
+      .rightMenu ul{
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+      .rightMenu ul li{
+        display: inline-block;
+        padding: 20px;
+      }
+      .rightMenu ul li a{
+        color: white;
+      }
+      .rightMenu ul li a.dropdown{
+        color: red;
+      }
+      .leftMenu ul li a:hover{
+        color: rgba(255,255,255, 0.8);
+      }
+      .notifications{
+       display: inline-block;
+       width: 20px;
+       height: 26px;
+      }
+    #largeImage{
+        padding: 200px 25px ;
+        background: url(https://images2.alphacoders.com/104/1041826.jpg) no-repeat center bottom;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+      }
+      .description-box{
+        width: 50%;
+      }
+      .description-box h1{
+        font-family: fantasy;
+        font-weight: 200;
+        font-size: 70px;
+        text-shadow: 0px 0px 30px black;
+        margin: 0;
+        color: #F0FFFF;
+      }
+      .description-box h3{
+        font-family: fantasy;
+        font-weight: 100;
+        font-size: 30px;
+        text-shadow: 0px 0px 30px black;
+        margin: 0;
+        color: #F0FFFF;
+      }
+      .description-box h4{
+        font-family: fantasy;
+        font-weight: 100;
+        text-shadow: 0px 0px 30px black;
+        margin: 0;
+        color: #F0FFFF;
+      }
+      .description-box p{
+        font-family: helvetico;
+        margin: 25px 0 20px !important;
+        font-weight: 100;
+        font-size: 18px;
+        text-shadow: 0px 0px 30px black;
+        margin: 0;
+        color: #F0FFFF;
+      }
+      .button1{
+        display: inline-block;
+        padding: 12px 20px;
+        background: #000;
+        color: #fff;
+        cursor: pointer;
+      }
+      .button2{
+        display: inline-block;
+        padding: 10px 18px;
+        border: 2px solid #000;
+        color: #fff;
+        cursor: pointer;
+      }
+      .button1:hover, .button2:hover{
+        background: rgba(0,0,0,.6);
+      }
+    #videoSection{
+       width: 100%;
+       background: black;
+     }
+     .row1, .row2, .row3{
+      width: 100%;
+      font-size: 0;
+      margin: 0px 40px 0px 40px;
+      }
+      .videoBoxes{
+       display: inline-block;
+       background: red;
+       width: 18%;
+       min-height: 130px;
+       margin: 0.2%;
+       font-size: 15px;
+       }
+       .videoBoxes h4{
+        margin: 0;
+        padding: 0;
+        font-size: 10px;
+        font-family: helvetico;
+        color: white;
+       }
+       .videoBoxes p{
+        display: none;
+        }
+       .video1_1{
+       background: url(http://www.impawards.com/intl/uk/tv/posters/top_boy_xlg.jpg) no-repeat center bottom;
+       -webkit-background-size: cover;
+       -moz-background-size: cover;
+       -o-background-size: cover;
+       background-size: cover;
+       }
+       .video1_2{
+       background: url(https://img.goldposter.com/2019/07/episode-3-1-12_poster_goldposter_com_8.jpg?x-oss-process=image/resize,m_fill,h_325,w_800/quality,q_80) no-repeat center center;
+       -webkit-background-size: cover;
+       -moz-background-size: cover;
+       -o-background-size: cover;
+       background-size: cover;
+       }
+       .video1_3{
+       background: url(https://mrspeabodyinvestigates.files.wordpress.com/2018/01/mindhunter-2.jpg ) no-repeat center bottom;
+       -webkit-background-size: cover;
+       -moz-background-size: cover;
+       -o-background-size: cover;
+       background-size: cover;
+       }
+       .video1_4{
+       background: url(http://getwallpapers.com/wallpaper/full/d/a/1/1098926-cool-peaky-blinders-wallpapers-1920x1080-windows-xp.jpg) no-repeat center bottom;
+       -webkit-background-size: cover;
+       -moz-background-size: cover;
+       -o-background-size: cover;
+       background-size: cover;
+       }
+       .video1_5{
+       background: url(https://news.newonnetflix.info/wp-content/uploads/2017/07/rick-and-morty-season-3.jpg) no-repeat center bottom;
+       -webkit-background-size: cover;
+       -moz-background-size: cover;
+       -o-background-size: cover;
+       background-size: cover;
+       }
+       .video2_1{
+       background: url(https://coreykopedotcom.files.wordpress.com/2019/10/maxresdefault.jpg) no-repeat center bottom;
+       -webkit-background-size: cover;
+       -moz-background-size: cover;
+       -o-background-size: cover;
+       background-size: cover;
+       }
+       .video2_2{
+       background: url(https://popculturetimes.com/wp-content/uploads/2020/01/Sex-Education-Season-2-1.jpg) no-repeat center top;
+       -webkit-background-size: cover;
+       -moz-background-size: cover;
+       -o-background-size: cover;
+       background-size: cover;
+       }
+       .video2_3{
+       background: url(https://blog.roku.com/wp-content/uploads/2015/02/HOC3_KeyArt_191_Horizontal_RGB_V2_type_LR.jpg) no-repeat center top;
+       -webkit-background-size: cover;
+       -moz-background-size: cover;
+       -o-background-size: cover;
+       background-size: cover;
+       }
+       .video2_4{
+       background: url(https://popculturetimes.com/wp-content/uploads/2020/01/Sherlock-Season-5-1024x576.jpg) no-repeat center bottom;
+       -webkit-background-size: cover;
+       -moz-background-size: cover;
+       -o-background-size: cover;
+       background-size: cover;
+       }
+       .video2_5{
+       background: url(https://pbs.twimg.com/media/EKZixEBU0AA25kq?format=jpg&name=large) no-repeat center center;
+       -webkit-background-size: cover;
+       -moz-background-size: cover;
+       -o-background-size: cover;
+       background-size: cover;
+       }
+       .video3_1{
+       background: url(https://pbs.twimg.com/media/C5L6zhyUoAIL_qg?format=jpg&name=medium) no-repeat center top;
+       -webkit-background-size: cover;
+       -moz-background-size: cover;
+       -o-background-size: cover;
+       background-size: cover;
+       }
+       .video3_2{
+       background: url(https://m.media-amazon.com/images/M/MV5BMzIzMjI1N2UtNDE4OS00NzA3LWEwMjItM2ZmMzhjNzIzZTljXkEyXkFqcGdeQXVyMzUxMTU2MTU@._V1_SX1777_CR0,0,1777,999_AL_.jpg) no-repeat center bottom;
+       -webkit-background-size: cover;
+       -moz-background-size: cover;
+       -o-background-size: cover;
+       background-size: cover;
+       }
+       .video3_3{
+       background: url(https://i0.wp.com/see.news/wp-content/uploads/2020/03/02_NF_TheWitcher_SocialSkin_facebook.jpg?fit=2048%2C1152&ssl=1) no-repeat center bottom;
+       -webkit-background-size: cover;
+       -moz-background-size: cover;
+       -o-background-size: cover;
+       background-size: cover;
+       }
+       .video3_4{
+       background: url(https://149398830.v2.pressablecdn.com/wp-content/uploads/2019/08/OUTH_Launch_Quad-cropped.jpg) no-repeat center bottom;
+       -webkit-background-size: cover;
+       -moz-background-size: cover;
+       -o-background-size: cover;
+       background-size: cover;
+       }
+       .video3_5{
+       background: url(https://www.heavenofhorror.com/wp-content/uploads/2020/03/freud-netflix-review.jpg) no-repeat center center;
+       -webkit-background-size: cover;
+       -moz-background-size: cover;
+       -o-background-size: cover;
+       background-size: cover;
+       }
+       /*for mobile*/
+       @media only screen and (max-width: 600px){
+         .videoBoxes{
+           width: 95%;
+           margin: 2.5%;
+         }
+         .videoBoxes h4{
+           font-family: helvetico;
+           font-weight: 100;
+           font-size: 40px;
+         }
+         .videoBoxes p{
+           display: block;
+           font-family: helvetico;
+           font-weight: 300;
+           font-size: 20px;
+           color: #fff;
+         }
+       }
+
+  </style>
+  </head>
+  <body>
+    <div id="header">
+       <div class="logo">logo</div>
+       <div class="leftMenu">
+        <ul>
+          <li>
+            <a href="home.html">Home</a>
+          </li>
+          <li>
+            <a href="tvShows.html">TV Shows</a>
+          </li>
+          <li>
+            <a href="Movies.html">kids</a>
+          </li>
+        </ul>
+       </div>
+       <div class="rightMenu">
+         <ul>
+           <li>
+             <a href="search.html">Search</a>
+           </li>
+           <li>
+             <a href="notifications.html"><img class="notifications" src="bell1.jpg"></img></a>
+           </li>
+           <li>
+             <a href="username.html" class="dropdown">UserName</a>
+           </li>
+         </ul>
+       </div>
+    </div>
+    <div id="largeImage">
+      <div class="description-box">
+        <h4>Netflix Presents</h4>
+        <h1>YoSancho</h1>
+        <h3>Available Now</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel purus et felis ullamcorper porta. Donec sed luctus lacus. Donec eu nunc congue, sollicitudin turpis sit amet, dapibus nibh. Quisque nisl neque, venenatis id tempor quis, dignissim ut leo. Nullam ultricies malesuada lacus ut suscipit. Mauris ac gravida ligula. Maecenas ut egestas tortor.</p>
+        <div class="button1">Button 1</div>
+        <div class="button2">Button 2</div>
+      </div>
+
+    </div>
+    <div id="videoSection">
+      <div class="row1">
+        <div class="videoBoxes video1_1"><h4>Video</h4>
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
+        </div>
+        <div class="videoBoxes video1_2"> <h4>Video</h4>
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
+        </div>
+        <div class="videoBoxes video1_3"><h4>Video</h4>
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
+        </div>
+        <div class="videoBoxes video1_4"><h4>Video</h4>
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
+        </div>
+        <div class="videoBoxes video1_5"><h4>Video</h4>
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
+        </div>
+      </div>
+      <div class="row2">
+        <div class="videoBoxes video2_1"><h4>Video</h4>
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
+        </div>
+        <div class="videoBoxes video2_2"> <h4>Video</h4>
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
+        </div>
+        <div class="videoBoxes video2_3"><h4>Video</h4>
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
+        </div>
+        <div class="videoBoxes video2_4"><h4>Video</h4>
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
+        </div>
+        <div class="videoBoxes video2_5"><h4>Video</h4>
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
+        </div>
+      </div>
+      <div class="row3">
+        <div class="videoBoxes video3_1"><h4>Video</h4>
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
+        </div>
+        <div class="videoBoxes video3_2"> <h4>Video</h4>
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
+        </div>
+        <div class="videoBoxes video3_3"><h4>Video</h4>
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
+        </div>
+        <div class="videoBoxes video3_4"><h4>Video</h4>
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
+        </div>
+        <div class="videoBoxes video3_5"><h4>Video</h4>
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
